@@ -1,0 +1,28 @@
+{
+  "nodes": [
+    {
+      "id": "agent-c",
+      "host": "192.168.1.13",
+      "user": "thienhongan0794",
+      "port": 8113,
+      "role": "worker",
+      "skills": ["echo", "shell"]
+    },
+    {
+      "id": "agent-b",
+      "host": "192.168.1.14",
+      "user": "thienhongan0908",
+      "port": 8114,
+      "role": "worker",
+      "skills": ["echo", "shell"]
+    },
+    {
+      "id": "agent-a",
+      "host": "192.168.1.11",
+      "user": "thienhongan0938",
+      "port": 8115,
+      "role": "worker",
+      "skills": ["echo", "shell"]
+    }
+  ]
+}
