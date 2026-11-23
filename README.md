@@ -10,8 +10,8 @@ cũng có thể phát hiện và giao task sang node khác.
 
 | # | Giải pháp | Protocol | Vị trí | Trạng thái |
 |---|-----------|----------|--------|------------|
-| 1 | **Hermes A2A platform** (native) | A2A **v1.0** (`SendMessage`) | `~/.hermes/hermes-agent/plugins/platforms/a2a/` | sẵn có; inbound `:9900`, outbound tools `a2a_call/discover/list/history/orchestrate` |
-| 2 | **lan-a2a** (repo này) | A2A **v0.3** (`message/send`) + **chuẩn hóa v1.0↔v0.3** | `~/lan-a2a` | đã chạy `:8113` (agent-c), `:8114` (agent-b) |
+| 1 | **Hermes A2A platform** (native) | A2A **v1.0** (`SendMessage`) | `~/.hermes/hermes-agent/plugins/platforms/a2a/` | sẵn có; inbound `:9900` (đã bật + token + `A2A_TRUSTED_PEERS`), outbound tools `a2a_call/discover/list/history/orchestrate` |
+| 2 | **lan-a2a** (repo này) | A2A **v0.3** (`message/send`) + **chuẩn hóa v1.0↔v0.3** | `~/lan-a2a` | đã chạy `:8113` (agent-c), `:8114` (agent-b); chưa có auth |
 | 3 | **Hermes `bot_peers`** | HTTP JSON qua `api_server` | `config.yaml: bot_peers` | đã cấu hình `agent-b`, `lan-14` |
 
 Ngoài ra `.14` có `~/crewai-lab/lan-agents/a2a_gateway.py` (`:9902`) — bridge
@@ -62,6 +62,12 @@ uv pip install --python .venv/bin/python \
 - Hermes A2A **v1.0** `a2a_call` → `agent-b` và `agent-c`: ✅ (qua normalizer)
 - Hermes A2A **v1.0** `a2a_call` → gateway `:9902` → crewAI crew `:9901`: ✅
   (trả báo cáo tiếng Việt)
+- Hermes native `:9900` hai chiều `.13 ↔ .14` (v1.0 `SendMessage`, có bearer token): ✅
+  - `.13 → .14:9900`: `TASK_STATE_COMPLETED`
+  - `.14 → .13:9900`: `TASK_STATE_COMPLETED`
+  - không token → `401`; token sai/peer lạ → `403` (fail-closed)
+- `.13 → .14:9902` (crewAI crew): ✅ báo cáo tiếng Việt
+- `agent-a (192.168.1.11:8115)`: offline (máy tắt)
 
 ## Registry
 
