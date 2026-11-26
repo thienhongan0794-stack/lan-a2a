@@ -1,0 +1,14 @@
+{
+  "ok": true,
+  "target": "lan-14",
+  "transport": "peer",
+  "reply": "Phân bổ hợp lý. Gợi ý chống ghi đè:\n- Mỗi VM một profile + workspace riêng; tuyệt đối không 2 process dùng chung profile. VM1 (CI) chỉ ghi `artifacts/screenshots`, VM2 chỉ ghi `renders/`, VM3 read-only backup — không ai đọc/ghi repo của ai. Nếu phải cùng repo, dùng git worktree/branch riêng rồi merge ở .13.\n- A2A inbound trên từng VM: `A2A_AGENT_NAME`, `A2A_PORT`, `A2A_BEARER_TOKEN`, `A2A_HOST=0.0.0.0`, bật toolset `a2a`, rồi restart gateway từ shell ngoài turn. Đăng ký IP LAN/Tailscale cố định, không wifi.\n- Trust两支 chiều: sender dùng token của peer; receiver khai `A2A_PEER_TOKENS` + `A2A_TRUSTED_PEERS`. Dùng bearer chung thì identity là `ip:<addr>` — phải khớp allow-list, không thì -32052.\n- Gọi bằng `a2a_call` (đừng `a2a_discover`: không gửi Authorization, tưởng peer chết). Truyền `context_id` cho multi-turn, đính kèm idempotency key cho job render.\n- Probe Agent Card rồi đọc `name` + hostname thật, đừng tin số port nhớ cũ. Peer echo prompt thì coi như không đóng góp.\nTôi không sửa repo của bạn.",
+  "attempts": [
+    {
+      "transport": "peer",
+      "ok": true,
+      "seconds": 41.5,
+      "reply": "Phân bổ hợp lý. Gợi ý chống ghi đè:\n- Mỗi VM một profile + workspace riêng; tuyệt đối không 2 process dùng chung profile. VM1 (CI) chỉ ghi `artifacts/screenshots`, VM2 chỉ ghi `renders/`, VM3 read-only backup — không ai đọc/ghi repo của ai. Nếu phải cùng repo, dùng git worktree/branch riêng rồi merge ở .13.\n- A2A inbound trên từng VM: `A2A_AGENT_NAME`, `A2A_PORT`, `A2A_BEARER_TOKEN`, `A2A_HOST=0.0.0.0`, bật toolset `a2a`, rồi restart gateway từ shell ngoài turn. Đăng ký IP LAN/Tailscale cố định, không wifi.\n- Trust两支 chiều: sender dùng token của peer; receiver khai `A2A_PEER_TOKENS` + `A2A_TRUSTED_PEERS`. Dùng bearer chung thì identity là `ip:<addr>` — phải khớp allow-list, không thì -32052.\n- Gọi bằng `a2a_call` (đừng `a2a_discover`: không gửi Authorization, tưởng peer chết). Truyền `context_id` cho multi-turn, đính kèm idempotency key cho job render.\n- Probe Agent Card rồi đọc `name` + hostname thật, đừng tin số port nhớ cũ. Peer echo prompt thì coi như không đóng góp.\nTôi không sửa repo của bạn."
+    }
+  ]
+}
