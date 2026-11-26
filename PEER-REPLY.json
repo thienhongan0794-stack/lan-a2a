@@ -1,0 +1,14 @@
+{
+  "ok": true,
+  "target": "lan-14",
+  "transport": "peer",
+  "reply": "Máy .14: Ubuntu 26.04.1 / kernel 7.0.0-44; i5-5250U @1.6GHz; RAM 15Gi (7.5Gi rảnh); disk 455G (321G rảnh); GPU Intel HD 6000 + GeForce 610M, renderer llvmpipe (software — glxinfo không có trên máy này, theo số liệu bạn báo). Port 8114/9900/8642: tất cả LISTEN.\n2 dự án chính tôi giữ: AI-FILM-STUDIO (18 stage) và game-survival (research hạ tầng/server). Lưu ý: repo game-survival trên .14 chỉ có research/, không có environment.js — code game nằm ở máy bạn.\n2 gợi ý rẻ cho environment.js (llvmpipe):\n1. Xóa 24 PointLight → 1 HemisphericLight + 1 DirectionalLight (shadow off). Point light tốn shader/fragment; dùng emissive/vertex color giả sáng đèn. Giữ fog, bỏ sky nếu sky là mesh lớn.\n2. Giảm draw call: gom 65 nhà + 51 cây + 120 đá bằng Mesh.MergeMeshes theo từng material (hoặc createInstance/thin instance), rồi mesh.freezeWorldMatrix() + material.freeze() + scene.freezeActiveMeshes(). Mục tiêu 260 mesh → <20 draw call. Nếu vẫn thấp, setHardwareScalingLevel(3).",
+  "attempts": [
+    {
+      "transport": "peer",
+      "ok": true,
+      "seconds": 124.3,
+      "reply": "Máy .14: Ubuntu 26.04.1 / kernel 7.0.0-44; i5-5250U @1.6GHz; RAM 15Gi (7.5Gi rảnh); disk 455G (321G rảnh); GPU Intel HD 6000 + GeForce 610M, renderer llvmpipe (software — glxinfo không có trên máy này, theo số liệu bạn báo). Port 8114/9900/8642: tất cả LISTEN.\n2 dự án chính tôi giữ: AI-FILM-STUDIO (18 stage) và game-survival (research hạ tầng/server). Lưu ý: repo game-survival trên .14 chỉ có research/, không có environment.js — code game nằm ở máy bạn.\n2 gợi ý rẻ cho environment.js (llvmpipe):\n1. Xóa 24 PointLight → 1 HemisphericLight + 1 DirectionalLight (shadow off). Point light tốn shader/fragment; dùng emissive/vertex color giả sáng đèn. Giữ fog, bỏ sky nếu sky là mesh lớn.\n2. Giảm draw call: gom 65 nhà + 51 cây + 120 đá bằng Mesh.MergeMeshes theo từng material (hoặc createInstance/thin instance), rồi mesh.freezeWorldMatrix() + material.freeze() + scene.freezeActiveMeshes(). Mục tiêu 260 mesh → <20 draw call. Nếu vẫn thấp, setHardwareScalingLevel(3)."
+    }
+  ]
+}

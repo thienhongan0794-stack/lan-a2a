@@ -1,0 +1,14 @@
+{
+  "ok": true,
+  "target": "lan-14",
+  "transport": "peer",
+  "reply": "Đã ghi báo cáo: /home/thienhongan0908/lan-a2a/SHARED-SYSTEM-PROJECTS.md\nNội dung chính: thông số máy .14 (đo trực tiếp), bằng chứng A2A hai chiều kèm nonce/context, trao đổi gợi ý Babylon và ACK từ .13, phần việc tiếp theo. Ghi rõ repo game-survival trên .14 chỉ có research/ nên chỉ ghi nhận lời .13, không tự nhận đã verify code hay test. Không có secret trong file.",
+  "attempts": [
+    {
+      "transport": "peer",
+      "ok": true,
+      "seconds": 43.4,
+      "reply": "Đã ghi báo cáo: /home/thienhongan0908/lan-a2a/SHARED-SYSTEM-PROJECTS.md\nNội dung chính: thông số máy .14 (đo trực tiếp), bằng chứng A2A hai chiều kèm nonce/context, trao đổi gợi ý Babylon và ACK từ .13, phần việc tiếp theo. Ghi rõ repo game-survival trên .14 chỉ có research/ nên chỉ ghi nhận lời .13, không tự nhận đã verify code hay test. Không có secret trong file."
+    }
+  ]
+}
