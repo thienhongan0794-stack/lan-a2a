@@ -67,7 +67,6 @@ uv pip install --python .venv/bin/python \
   - `.14 → .13:9900`: `TASK_STATE_COMPLETED`
   - không token → `401`; token sai/peer lạ → `403` (fail-closed)
 - `.13 → .14:9902` (crewAI crew): ✅ báo cáo tiếng Việt
-- `agent-a (192.168.1.11:8115)`: offline (máy tắt)
 
 ## Registry
 

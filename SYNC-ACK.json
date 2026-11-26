@@ -1,0 +1,14 @@
+{
+  "ok": true,
+  "target": "lan-14",
+  "transport": "peer",
+  "reply": "Kiểm kê xong (không đọc nội dung secret):\nĐã nhận đủ:\n- Mirror .13 → .14: 14.317 file / 1,1 GB, đủ các path chính (game-survival, ai-film-studio, lan-a2a, engines, projects-registry.json, docs). `navigation.js` + `navigation.test.js` có mặt.\n- Mirror .14 → .13: peer .13 tự xác nhận 14.382 file / 1.138.217.339 byte (context ctx-d98792b5aefb4b4d).\n- Registry: đúng 2 node trên cả hai máy.\nThiếu trên .14:\n- `~/lan-a2a/SYNC/SECRETS/from-13` — thư mục không tồn tại (0/11 file).\n- `~/lan-a2a/SYNC/SECRETS/from-14` — thư mục rỗng (0/7 file).\n- `~/lan-a2a/SYNC/.gitignore` — ban đầu thiếu; đã chép bản từ mirror (`*` + `!.gitignore`) để chặn commit. symbol\nVậy mới chỉ đồng bộ được dữ liệu thường; gói secret chưa có mặt ở .14, cần rsync lại trước khi coi là xong hai chiều. Đã ghi phần kiểm kê vào /home/thienhongan0908/lan-a2a/SHARED-SYSTEM-PROJECTS.md.",
+  "attempts": [
+    {
+      "transport": "peer",
+      "ok": true,
+      "seconds": 115.1,
+      "reply": "Kiểm kê xong (không đọc nội dung secret):\nĐã nhận đủ:\n- Mirror .13 → .14: 14.317 file / 1,1 GB, đủ các path chính (game-survival, ai-film-studio, lan-a2a, engines, projects-registry.json, docs). `navigation.js` + `navigation.test.js` có mặt.\n- Mirror .14 → .13: peer .13 tự xác nhận 14.382 file / 1.138.217.339 byte (context ctx-d98792b5aefb4b4d).\n- Registry: đúng 2 node trên cả hai máy.\nThiếu trên .14:\n- `~/lan-a2a/SYNC/SECRETS/from-13` — thư mục không tồn tại (0/11 file).\n- `~/lan-a2a/SYNC/SECRETS/from-14` — thư mục rỗng (0/7 file).\n- `~/lan-a2a/SYNC/.gitignore` — ban đầu thiếu; đã chép bản từ mirror (`*` + `!.gitignore`) để chặn commit. symbol\nVậy mới chỉ đồng bộ được dữ liệu thường; gói secret chưa có mặt ở .14, cần rsync lại trước khi coi là xong hai chiều. Đã ghi phần kiểm kê vào /home/thienhongan0908/lan-a2a/SHARED-SYSTEM-PROJECTS.md."
+    }
+  ]
+}

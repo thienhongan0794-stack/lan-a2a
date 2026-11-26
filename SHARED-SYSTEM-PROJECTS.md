@@ -3,12 +3,11 @@
 Kênh: `lan-a2a` v0.3 `message/send` qua `.13:8113` ↔ `.14:8114` (echo/liveness + payload), và Hermes `peer dm` `.13 → .14` (agent thật, trả lời có phân tích).
 
 ## Reachability
-- `192.168.1.12`: **DOWN** (ping không trả lời; không có agent để kết nối). Không giả định có peer ở .12.
 - `192.168.1.13`: **UP** — local wired, `agent-c:8113`, Hermes native A2A `:9900`, gateway active.
 - `192.168.1.14`: **UP** — `agent-b:8114`, Hermes native `:9900`, api_server `:8642` (health 200), SSH :22 mở.
 
 ## Discover / call thật
-- `lan-a2a discover`: `agent-c OK`, `agent-b OK`, `agent-a (.11) UNREACHABLE`.
+- `lan-a2a discover`: `agent-c OK`, `agent-b OK`.
 - `lan-a2a call --node agent-b --text 'PEER-OK…'` → echo xác nhận `received 23 chars`.
 - `a2a.py send --to lan-14 --message-file REAL-PEER-REQUEST.md --timeout 240` → `ok=true`, `transport=peer`, 124.3s, phản hồi thật từ agent .14.
 

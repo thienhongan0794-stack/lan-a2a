@@ -1,0 +1,14 @@
+{
+  "ok": true,
+  "target": "lan-14",
+  "transport": "peer",
+  "reply": "Xác nhận OK: `SECRETS/from-13` = 11 file, `SECRETS/from-14` = 7 file, tất cả chmod 600, `.gitignore` có mặt (14 byte). Không đọc nội dung secret.",
+  "attempts": [
+    {
+      "transport": "peer",
+      "ok": true,
+      "seconds": 22.7,
+      "reply": "Xác nhận OK: `SECRETS/from-13` = 11 file, `SECRETS/from-14` = 7 file, tất cả chmod 600, `.gitignore` có mặt (14 byte). Không đọc nội dung secret."
+    }
+  ]
+}
