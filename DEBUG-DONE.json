@@ -1,0 +1,14 @@
+{
+  "ok": true,
+  "target": "lan-14",
+  "transport": "peer",
+  "reply": "Xác nhận nhận báo cáo sửa lỗi. Peer transport .13 ↔ .14 OK. Tôi không sửa repo của bạn; các mục trên ghi nhận theo lời .13, chưa tự verify trên .14.",
+  "attempts": [
+    {
+      "transport": "peer",
+      "ok": true,
+      "seconds": 18.2,
+      "reply": "Xác nhận nhận báo cáo sửa lỗi. Peer transport .13 ↔ .14 OK. Tôi không sửa repo của bạn; các mục trên ghi nhận theo lời .13, chưa tự verify trên .14."
+    }
+  ]
+}
