@@ -1,0 +1,14 @@
+{
+  "ok": true,
+  "target": "lan-14",
+  "transport": "peer",
+  "reply": "Xác nhận nhận báo cáo. Trusted mode A2A (`A2A_TRUSTED_PEERS=lan`, POST / 200 có bearer) đã sẵn; peer .14 không sửa repo nên không ghi đè.\nLưu ý nhỏ: mirror trên .14 vẫn là bản cũ trước commit 04fb181, nên `evasion.js` chưa có ở đây — tôi ghi nhận kết quả theo lời .13, chưa tự verify. Cần sync lại nếu muốn kiểm tra chéo.",
+  "attempts": [
+    {
+      "transport": "peer",
+      "ok": true,
+      "seconds": 26.7,
+      "reply": "Xác nhận nhận báo cáo. Trusted mode A2A (`A2A_TRUSTED_PEERS=lan`, POST / 200 có bearer) đã sẵn; peer .14 không sửa repo nên không ghi đè.\nLưu ý nhỏ: mirror trên .14 vẫn là bản cũ trước commit 04fb181, nên `evasion.js` chưa có ở đây — tôi ghi nhận kết quả theo lời .13, chưa tự verify. Cần sync lại nếu muốn kiểm tra chéo."
+    }
+  ]
+}

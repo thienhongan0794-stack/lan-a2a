@@ -9,4 +9,4 @@ HTML
 chromium --headless --no-sandbox --disable-gpu --hide-scrollbars --window-size=1280,720 \
   --screenshot="$HOME/renders/frame.png" "file://$HOME/renders/frame.html" >/dev/null 2>&1
 stat -c 'VM2_RENDER bytes=%s' "$HOME/renders/frame.png"
-printf '{"role":"render","host":"%s","frames":["frame.png"],"time":"%s"}\n' "$(hostname)" "$(date -u +%FT%TZ)" > "$HOME/renders/latest.json"
+printf '{"role":"render","host":"%s","frames":["frame.png"],"time":"%s"}\n' "$(hostname)" "$(date -u +%FT%TZ)" > "$HOME/renders/render-latest.json"

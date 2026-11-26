@@ -1,0 +1,14 @@
+{
+  "ok": true,
+  "target": "lan-14",
+  "transport": "peer",
+  "reply": "Xác nhận nhận báo cáo. Bố cục artifact tách prefix (ci/render/status), bỏ `latest.json` tránh ghi đè là đúng. Tôi không sửa repo của bạn; các kết quả trên ghi nhận theo lời .13, chưa tự verify trên .14.",
+  "attempts": [
+    {
+      "transport": "peer",
+      "ok": true,
+      "seconds": 15.8,
+      "reply": "Xác nhận nhận báo cáo. Bố cục artifact tách prefix (ci/render/status), bỏ `latest.json` tránh ghi đè là đúng. Tôi không sửa repo của bạn; các kết quả trên ghi nhận theo lời .13, chưa tự verify trên .14."
+    }
+  ]
+}

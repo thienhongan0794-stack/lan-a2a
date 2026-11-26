@@ -1,0 +1,14 @@
+{
+  "ok": true,
+  "target": "lan-14",
+  "transport": "peer",
+  "reply": "Xác nhận peer transport .13 ↔ .14 OK.",
+  "attempts": [
+    {
+      "transport": "peer",
+      "ok": true,
+      "seconds": 31.0,
+      "reply": "Xác nhận peer transport .13 ↔ .14 OK."
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "ok": true,
+  "target": "lan-14",
+  "transport": "ssh",
+  "reply": "BAO CÁO DEBUG (chỉ kiểm tra, không sửa gì):\n1) A2A inbound 9900: GET 200 `{\"status\":\"ok\",\"agent\":\"vostro-3558\"}`. POST không bearer → 401 `unauthorized`. Bearer owner/peer `lan` → được nhận (không 401), nhưng `message/send` không trả trong 5s (timeout khi thử nghiệm). Bearer sai → 401. Trusted: `lan,ip:192.168.1.13,ip:127.0.0.1`.\n2) LAN-A2A 8114: card `/.well-known/agent.json` trả 200 (v0.3.0, skills echo/shell). `a2a_discover` với URL có đuôi `/.well-known/agent.json` → 404 do tool tự nối path; dùng base URL thì OK. `a2a_call agent_b` (9910→8114) → `completed`.\n3) Gateway/api_server 8642: `/health` 200, v0.23.3. `/v1/models` 401 khi thiếu key, 200 khi dùng `API_SERVER_KEY`. `/docs`, `/openapi.json` → 404.\n4) Bất thường: UFW `inactive`. `8642, 9900, 9902, 8114, 20128, 5678` listen `0.0.0.0`; 8114/bridge không auth. Port lạ: 9119 (pid 2382, hermes), 10300, 3389. `9901/9905/9910/9911` chỉ localhost.\n5) Disk 113G/455G (27%). RAM 7.6/15Gi dùng, available 7.4Gi.\n6) `~/lan-a2a` KHÔNG có `.git` → không phải repo git, không đo được dirty.\n7) XMRig pid 1853 chạy 16h47, 9router pid 2388 giữ :20128. Firewall nguyên trạng (UFW inactive). Không file/repo nào bị thay đổi.",
+  "attempts": [
+    {
+      "transport": "peer",
+      "ok": false,
+      "seconds": 180.1,
+      "reply": "TIMEOUT after 180s"
+    },
+    {
+      "transport": "ssh",
+      "ok": true,
+      "seconds": 117.0,
+      "reply": "BAO CÁO DEBUG (chỉ kiểm tra, không sửa gì):\n1) A2A inbound 9900: GET 200 `{\"status\":\"ok\",\"agent\":\"vostro-3558\"}`. POST không bearer → 401 `unauthorized`. Bearer owner/peer `lan` → được nhận (không 401), nhưng `message/send` không trả trong 5s (timeout khi thử nghiệm). Bearer sai → 401. Trusted: `lan,ip:192.168.1.13,ip:127.0.0.1`.\n2) LAN-A2A 8114: card `/.well-known/agent.json` trả 200 (v0.3.0, skills echo/shell). `a2a_discover` với URL có đuôi `/.well-known/agent.json` → 404 do tool tự nối path; dùng base URL thì OK. `a2a_call agent_b` (9910→8114) → `completed`.\n3) Gateway/api_server 8642: `/health` 200, v0.23.3. `/v1/models` 401 khi thiếu key, 200 khi dùng `API_SERVER_KEY`. `/docs`, `/openapi.json` → 404.\n4) Bất thường: UFW `inactive`. `8642, 9900, 9902, 8114, 20128, 5678` listen `0.0.0.0`; 8114/bridge không auth. Port lạ: 9119 (pid 2382, hermes), 10300, 3389. `9901/9905/9910/9911` chỉ localhost.\n5) Disk 113G/455G (27%). RAM 7.6/15Gi dùng, available 7.4Gi.\n6) `~/lan-a2a` KHÔNG có `.git` → không phải repo git, không đo được dirty.\n7) XMRig pid 1853 chạy 16h47, 9router pid 2388 giữ :20128. Firewall nguyên trạng (UFW inactive). Không file/repo nào bị thay đổi."
+    }
+  ]
+}

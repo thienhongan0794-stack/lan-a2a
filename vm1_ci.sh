@@ -15,6 +15,6 @@ cd "$HOME/game-survival" || exit 1
 node --test web/tests > "$HOME/ci-runs/web.log" 2>&1
 rc=$?
 grep -E '# (tests|pass|fail)' "$HOME/ci-runs/web.log" > "$HOME/ci-runs/web.summary" || true
-printf '{"role":"ci","host":"%s","commit":"%s","web_rc":%d,"time":"%s"}\n' "$(hostname)" "$commit" "$rc" "$(date -u +%FT%TZ)" > "$HOME/ci-runs/latest.json"
+printf '{"role":"ci","host":"%s","commit":"%s","web_rc":%d,"time":"%s"}\n' "$(hostname)" "$commit" "$rc" "$(date -u +%FT%TZ)" > "$HOME/ci-runs/ci-latest.json"
 echo "VM1_CI commit=$commit rc=$rc"
 cat "$HOME/ci-runs/web.summary"

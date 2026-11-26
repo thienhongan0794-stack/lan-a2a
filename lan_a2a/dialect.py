@@ -30,6 +30,23 @@ def _normalize_role(role: object) -> object:
     return role
 
 
+def _content_to_parts(content: object) -> list[dict]:
+    """v1.0 ``content`` items (``{type, text}``) -> v0.3 ``parts`` (``{kind, text}``)."""
+    if not isinstance(content, list):
+        return []
+    parts: list[dict] = []
+    for item in content:
+        if not isinstance(item, dict):
+            continue
+        raw_kind = item.get("type") or item.get("kind") or "text"
+        kind = "text" if str(raw_kind).lower() in ("text", "text/plain") else raw_kind
+        text = item.get("text")
+        if text is None:
+            text = item.get("content", "")
+        parts.append({"kind": kind, "text": "" if text is None else str(text)})
+    return parts
+
+
 def _rewrite_body(data: dict) -> dict:
     method = data.get("method")
     if isinstance(method, str) and method in _METHOD_MAP:
@@ -39,6 +56,10 @@ def _rewrite_body(data: dict) -> dict:
         message = params.get("message")
         if isinstance(message, dict):
             message["role"] = _normalize_role(message.get("role"))
+            if "parts" not in message and isinstance(message.get("content"), list):
+                parts = _content_to_parts(message["content"])
+                if parts:
+                    message["parts"] = parts
     return data
 
 
