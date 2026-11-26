@@ -1,0 +1,1 @@
+{"jsonrpc":"2.0","id":"trusted-probe-1","method":"SendMessage","params":{"message":{"role":"user","parts":[{"text":"TRUSTED-PROBE from .13"}],"messageId":"trusted-probe-msg-1"}}}

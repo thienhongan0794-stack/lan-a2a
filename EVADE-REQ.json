@@ -1,0 +1,14 @@
+{
+  "ok": true,
+  "target": "lan-14",
+  "transport": "peer",
+  "reply": "Trusted mode A2A sẵn sàng; tôi chỉ tư vấn, không sửa file repo.\n1) Né ngang: khi player bắn/trúng, phát event `{origin, dir, t}` cho zombie trong ~12 m; lưu `dodgeUntil = t+0.45`, `dodgeDir = perp(dir) * ±1`, cooldown 1.2 s. Cộng vào steering `+ dodgeDir*1.8`; giữ FSM/attackRange 2.6 nguyên vẹn (flag trong `chase`, đừng thêm state).\n2) Separation: trong `ai.js`, với neighbour cách `<2*agentRadius` (~1.6–2 m), `sep += normalize(pi-pj)/dist`; combine `desired = normalize(flow*1 + sep*1.2 + dodge*1.8)`, rồi `steer = clamp(desired*speed - velocity, maxForce)`. Dùng spatial hash cell 4 của navigator, đừng O(n²).\n3) Vật cản: `navigation.js` đã có `lineClear`/`isReachable`/`nearestFree` và inflate `agentRadius`. Sau `navigator.path(from)`, nếu `!lineClear(pos, waypoint)` thì lui về descend 8-neighbour theo `cost[]` (ô có cost thấp nhất, không cắt góc chéo); tuyệt đối không đi thẳng. Giữ `throttle=0.18`.\nTest: thêm 3 case trong `tests/ai.test.js` — dodge dot >0.7, separation >0.9 m, không vướng obstacle.",
+  "attempts": [
+    {
+      "transport": "peer",
+      "ok": true,
+      "seconds": 39.2,
+      "reply": "Trusted mode A2A sẵn sàng; tôi chỉ tư vấn, không sửa file repo.\n1) Né ngang: khi player bắn/trúng, phát event `{origin, dir, t}` cho zombie trong ~12 m; lưu `dodgeUntil = t+0.45`, `dodgeDir = perp(dir) * ±1`, cooldown 1.2 s. Cộng vào steering `+ dodgeDir*1.8`; giữ FSM/attackRange 2.6 nguyên vẹn (flag trong `chase`, đừng thêm state).\n2) Separation: trong `ai.js`, với neighbour cách `<2*agentRadius` (~1.6–2 m), `sep += normalize(pi-pj)/dist`; combine `desired = normalize(flow*1 + sep*1.2 + dodge*1.8)`, rồi `steer = clamp(desired*speed - velocity, maxForce)`. Dùng spatial hash cell 4 của navigator, đừng O(n²).\n3) Vật cản: `navigation.js` đã có `lineClear`/`isReachable`/`nearestFree` và inflate `agentRadius`. Sau `navigator.path(from)`, nếu `!lineClear(pos, waypoint)` thì lui về descend 8-neighbour theo `cost[]` (ô có cost thấp nhất, không cắt góc chéo); tuyệt đối không đi thẳng. Giữ `throttle=0.18`.\nTest: thêm 3 case trong `tests/ai.test.js` — dodge dot >0.7, separation >0.9 m, không vướng obstacle."
+    }
+  ]
+}
